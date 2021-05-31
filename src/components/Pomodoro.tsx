@@ -41,6 +41,13 @@ const Pomodoro = () => {
     }
   };
 
+  const displayNotification = () => {
+    if (isOver) {
+      return `Time's up!`;
+    }
+    return null;
+  };
+
   const handleCountDown = (isActive: boolean) => {
     setError(validate(minutesInput));
     if (Number(minutesInput) > 0) {
@@ -85,6 +92,7 @@ const Pomodoro = () => {
         <div className="max-w-md">
           <div className="card shadow-xl image-full w-80">
             <div className="justify-end card-body">
+              <h1 className="card-title">{displayNotification()}</h1>
               <div>
                 <DisplayTimer
                   minutes={minutes}
