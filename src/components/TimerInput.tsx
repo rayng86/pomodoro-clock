@@ -13,6 +13,12 @@ const TimerInput = ({
   handleInput,
   isDisabled,
 }: TimerInputProps) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    const ALLOWED_CHARS_REGEXP = /[0-9/]+/;
+    if (!ALLOWED_CHARS_REGEXP.test(e.key)) {
+      e.preventDefault();
+    }
+  };
   return (
     <input
       className="input input-bordered text-black"
@@ -21,6 +27,7 @@ const TimerInput = ({
       placeholder={placeholder}
       value={minutesInput}
       onChange={handleInput}
+      onKeyDown={handleKeyDown}
       disabled={isDisabled}
     />
   );
