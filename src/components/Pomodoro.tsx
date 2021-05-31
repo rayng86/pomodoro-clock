@@ -38,6 +38,7 @@ const Pomodoro = () => {
       let min = Math.floor(timeLeft / 60);
       setMinutes(min);
       setSeconds(timeLeft - min * 60);
+      checkTimeRemaining();
     }
   };
 
@@ -65,6 +66,14 @@ const Pomodoro = () => {
     setSeconds(0);
     setClassName('');
     setIsActive(false);
+  };
+
+  const checkTimeRemaining = () => {
+    if (timeLeft <= 10) {
+      setClassName('text-red-500');
+    } else {
+      setClassName('');
+    }
   };
 
   useEffect(() => {
