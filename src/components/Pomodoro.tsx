@@ -40,7 +40,7 @@ const Pomodoro = () => {
       setSeconds(timeLeft - min * 60);
     }
   };
-  };
+
   const handleCountDown = (isActive: boolean) => {
     setError(validate(minutesInput));
     if (Number(minutesInput) > 0) {
