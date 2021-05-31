@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import DisplayTimer from './DisplayTimer';
 import TimerInput from './TimerInput';
+import validate from '../validate';
 
 const Pomodoro = () => {
   const [minutesInput, setMinutesInput] = useState<string>('');
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [className, setClassName] = useState('');
+  const [error, setError] = useState<string | null>(null);
   const [isActive, setIsActive] = useState(false);
   const [isOver, setIsOver] = useState(false);
 
@@ -20,6 +22,8 @@ const Pomodoro = () => {
       setMinutesInput(currentMinutes);
       setMinutes(Number(currentMinutes));
     }
+    let error = validate(currentMinutes);
+    setError(error);
   };
 
   const tick = () => {
@@ -94,6 +98,9 @@ const Pomodoro = () => {
                 handleInput={handleInput}
                 isDisabled={isActive}
               />
+              <div className="text-red-300 label-text inline-flex items-center mt-2 text-xs">
+                {error}
+              </div>
               <div className="btn-group my-5 flex justify-center">
                 <button
                   type="button"
