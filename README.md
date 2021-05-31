@@ -1,5 +1,5 @@
 # Simple Pomodoro Clock
-built with react, tailswindcss, daisy-ui
+built with react, typescript, tailswindcss, daisy-ui
 
 https://rng-pomodoro-clock.netlify.app
 
