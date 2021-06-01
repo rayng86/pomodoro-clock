@@ -35,9 +35,9 @@ const Pomodoro = () => {
       setIsOver(true);
     } else {
       setIsOver(false);
-      let min = Math.floor(timeLeft / 60);
-      setMinutes(min);
-      setSeconds(timeLeft - min * 60);
+      let currentMinutes = Math.floor(timeLeft / 60);
+      setMinutes(currentMinutes);
+      setSeconds(timeLeft - currentMinutes * 60);
       checkTimeRemaining();
     }
   };
@@ -115,16 +115,16 @@ const Pomodoro = () => {
                 handleInput={handleInput}
                 isDisabled={isActive}
               />
-              <div className="text-red-300 label-text inline-flex items-center mt-2 text-xs">
+              <div className="text-red-300 label-text inline-flex items-center my-2 text-xs">
                 {error}
               </div>
-              <div className="btn-group my-5 flex justify-center">
+              <div className="btn-group flex justify-center">
                 <button
                   type="button"
                   className="btn btn-primary"
                   onClick={(e) => handleCountDown(!isActive)}
                 >
-                  {!isActive ? 'start' : 'pause'}
+                  {!isActive ? 'start' : 'pause'} timer
                 </button>
 
                 <button
