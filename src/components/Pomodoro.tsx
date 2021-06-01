@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DisplayTimer from './DisplayTimer';
 import TimerInput from './TimerInput';
 import validate from '../validate';
+import ButtonPreset from './ButtonPreset';
 
 const Pomodoro = () => {
   const [minutesInput, setMinutesInput] = useState<string>('');
@@ -118,6 +119,17 @@ const Pomodoro = () => {
               <div className="text-red-300 label-text inline-flex items-center my-2 text-xs">
                 {error}
               </div>
+              <h2 className="uppercase mb-2">Quick Presets</h2>
+              <ButtonPreset
+                setMinutesInput={setMinutesInput}
+                setMinutes={setMinutes}
+                value={'5'}
+              />
+              <ButtonPreset
+                setMinutesInput={setMinutesInput}
+                setMinutes={setMinutes}
+                value={'25'}
+              />
               <div className="btn-group flex justify-center">
                 <button
                   type="button"
