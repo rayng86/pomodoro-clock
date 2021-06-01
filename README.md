@@ -3,4 +3,5 @@ built with react, typescript, tailswindcss, daisy-ui
 
 https://rng-pomodoro-clock.netlify.app
 
-![image](https://user-images.githubusercontent.com/74542/120240802-6f361980-c22f-11eb-989b-397dac188db3.png)
+![image](https://user-images.githubusercontent.com/74542/120380983-e0d59c80-c2ef-11eb-8577-f0bd5140f17a.png)
+
